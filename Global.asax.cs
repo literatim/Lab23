@@ -11,7 +11,7 @@ namespace Lab21
     {
         protected void Application_Start()
         {
-            Database.SetInitializer(new PersonDbInitializer.PersonInitializer());
+            Database.SetInitializer(new PersonDbInitializer());
             new PersonContext().Database.Initialize(false);
 
             AreaRegistration.RegisterAllAreas();
