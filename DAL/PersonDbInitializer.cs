@@ -1,5 +1,6 @@
 ﻿using Lab21.Models;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 
 namespace Lab21.DAL
 {
@@ -12,7 +13,7 @@ namespace Lab21.DAL
                 new Items {Name = "Dark Roast", Description = "Spicy bean juice", Quantity = 1, Price = 5.00},
             };
 
-            items.ForEach(s => context.Items.Add(s));
+            items.ForEach(s => context.Items.AddOrUpdate(s));
 
             context.SaveChanges();
 
